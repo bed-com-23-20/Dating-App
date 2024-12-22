@@ -33,33 +33,32 @@ import androidx.navigation.NavController
 import java.lang.reflect.Modifier
 import kotlin.system.exitProcess
 
-//import androidx.compose.foundation.layout.align
-
-
-
-
-
 @Composable
 fun LandingPage(navController: NavController){
 
     Column(
-        modifier = androidx.compose.ui.Modifier.fillMaxSize(),
+        modifier = androidx.compose.ui.Modifier.fillMaxSize()
+        .background(Color.White),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment =  Alignment.CenterHorizontally
 
 
+
+
     ){
-        Text(text = "SINGLE & SEARCHING", fontSize = 28.sp, fontWeight =  FontWeight.Bold, fontFamily = FontFamily.Serif)
-        Text(text = "DATING APP", fontSize = 28.sp, fontWeight =  FontWeight.Bold, fontFamily = FontFamily.Serif)
+        Text(text = "WELCOME TO", fontSize = 22.sp, fontWeight =  FontWeight.Bold, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic)
+        Spacer(modifier = androidx.compose.ui.Modifier.height(12.dp))
+        Text(text = "SINGLE & SEARCHING", fontSize = 28.sp, fontWeight =  FontWeight.Bold, fontFamily = FontFamily.Serif, color = Color.Red)
+        Text(text = "DATING APP", fontSize = 28.sp, fontWeight =  FontWeight.Bold, fontFamily = FontFamily.Serif, color = Color.Red)
 
         //Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.love_searching), // Replace with your image resource
+            painter = painterResource(id = R.drawable.love_searching),
             contentDescription = "Background Image",
-            modifier = androidx.compose.ui.Modifier.size(350.dp),//androidx.compose.ui.Modifier.fillMaxSize(),
+            modifier = androidx.compose.ui.Modifier.size(350.dp),
                 //.graphicsLayer(alpha = 0.1f),
-            contentScale = ContentScale.Crop // Scales the image to fill the screen, cropping if necessary
+            contentScale = ContentScale.Crop
         )
 
         Text(text = "Are you single and searching \nfor a Lover? Look no further!", fontSize = 20.sp, fontWeight =  FontWeight.Bold, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic)
@@ -86,6 +85,7 @@ fun LandingPage(navController: NavController){
         }
 
         Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
+
         androidx.compose.material3.Button(
             onClick = {
                 exitProcess(0)
@@ -105,7 +105,5 @@ fun LandingPage(navController: NavController){
             )
         }
     }
-
-
 
 }
